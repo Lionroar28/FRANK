@@ -1,9 +1,82 @@
 [gd_scene format=3 uid="uid://ceybx20yog35i"]
 
+[ext_resource type="Texture2D" uid="uid://igp3ie56yvcj" path="res://sadfassdfds.png" id="1_tvgyf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fm6bu"]
+atlas = ExtResource("1_tvgyf")
+region = Rect2(149, 0, 149, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tgcj"]
+atlas = ExtResource("1_tvgyf")
+region = Rect2(149, 0, 149, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1hdx"]
+atlas = ExtResource("1_tvgyf")
+region = Rect2(0, 0, 149, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grb4a"]
+atlas = ExtResource("1_tvgyf")
+region = Rect2(447, 0, 149, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j4eq"]
+atlas = ExtResource("1_tvgyf")
+region = Rect2(298, 0, 149, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmxt8"]
+atlas = ExtResource("1_tvgyf")
+region = Rect2(447, 0, 149, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bulpl"]
+atlas = ExtResource("1_tvgyf")
+region = Rect2(0, 0, 149, 250)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_abuqe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fm6bu")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tgcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1hdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grb4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j4eq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmxt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bulpl")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxsqa"]
+size = Vector2(145, 248)
+
 [node name="Node2D" type="Node2D" unique_id=1621674016]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1857727997]
+sprite_frames = SubResource("SpriteFrames_abuqe")
+animation = &"walk"
+frame_progress = 0.16567764
+centered = false
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1956019238]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=86251440]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=642663531]
+position = Vector2(288, 136)
+shape = SubResource("RectangleShape2D_gxsqa")
