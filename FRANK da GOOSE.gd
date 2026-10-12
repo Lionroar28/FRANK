@@ -10,7 +10,9 @@ func _ready():
 	screen_size = Vector2(DisplayServer.screen_get_size())
 
 func _physics_process(delta: float) -> void:
+	
 	var window_position = Vector2(DisplayServer.window_get_position())
-	window_position += direction * speed * delta
+	window_position += direction*speed*delta
 	print(window_position)
 	DisplayServer.window_set_position(Vector2i(window_position))
+	
