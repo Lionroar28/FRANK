@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ceybx20yog35i"]
 
+[ext_resource type="Script" uid="uid://c52mso6d3t3kb" path="res://FRANK.gd" id="1_fm6bu"]
 [ext_resource type="Texture2D" uid="uid://igp3ie56yvcj" path="res://sadfassdfds.png" id="1_tvgyf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fm6bu"]
@@ -65,18 +66,18 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gxsqa"]
-size = Vector2(145, 248)
+size = Vector2(138, 248)
 
 [node name="Node2D" type="Node2D" unique_id=1621674016]
+script = ExtResource("1_fm6bu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1857727997]
 sprite_frames = SubResource("SpriteFrames_abuqe")
 animation = &"walk"
-frame_progress = 0.779957
 centered = false
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1956019238]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=642663531]
-position = Vector2(75, 125)
+position = Vector2(73, 125)
 shape = SubResource("RectangleShape2D_gxsqa")
