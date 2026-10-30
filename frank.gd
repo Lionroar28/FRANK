@@ -18,6 +18,7 @@ var is_dragging  = false
 var drag_offset = Vector2()
 
 var voices = DisplayServer.tts_get_voices_for_language("en")
+var chosen_voice_id = ""
 
 func _ready():
 	$Label.visible = false
@@ -39,8 +40,15 @@ func _on_area_input(_viewport, event, _shape_idx):
 			
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
+			
+			var voice_list = DisplayServer.tts_get_voices()
 			$Label.visible = true
-			DisplayServer.tts_speak("QUACKQUACK", voices[1])
+			if voice_list.size() > 1:
+				chosen_voice_id = voice_list[1]["id"]
+			elif voice_list.size() >  0:
+				chosen_voice_id = voice_list[0]["id"]
+			if chosen_voice_id != "":
+				DisplayServer.tts_speak("QUACKQUACK", chosen_voice_id)
 			
 		else:
 			$Label.visible = false
